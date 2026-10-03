@@ -1,62 +1,189 @@
-# [Start Bootstrap - Business Casual](https://startbootstrap.com/template-overviews/business-casual/)
+# Expert System for Honda CB 150R Diagnosis
 
-[Business Casual](http://startbootstrap.com/template-overviews/business-casual/) is a multipurpose website theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features a landing page, about page, blog page, and a contact page along with various custom styles and components.
+This project is a web-based expert system developed to diagnose problems in Honda CB 150R motorcycles using the Depth-First Search (DFS) method. The application is designed to help users identify common faults based on observed symptoms and provide relevant solutions in a structured and logical way.
 
-## Preview
+## Project Description
 
-[![Business Casual Preview](https://startbootstrap.com/assets/img/templates/business-casual.jpg)](https://blackrockdigital.github.io/startbootstrap-business-casual/)
+This system applies the concept of an expert system, where a set of rules and knowledge is used to simulate expert reasoning. Users answer several questions regarding the symptoms they experience, and the application traverses the decision tree using DFS to find the most likely cause of the issue.
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-business-casual/)**
+The project is built using PHP and Bootstrap and aims to provide an easy-to-use interface for diagnosis, knowledge management, and motorcycle troubleshooting.
 
-## Status
+## Features
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-business-casual/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-business-casual.svg)](https://www.npmjs.com/package/startbootstrap-business-casual)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-business-casual.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-business-casual)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-business-casual/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-business-casual)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-business-casual/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-business-casual?type=dev)
+- Motorcycle fault diagnosis for Honda CB 150R
+- Rule-based expert system
+- Depth-First Search (DFS) decision traversal
+- User-friendly web interface
+- Symptom-based reasoning
+- Terminology dictionary for technical motorcycle terms
+- Feedback and suggestion form
+- Admin panel for data management
 
-## Download and Installation
+## Technologies Used
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/business-casual/)
-* Install via npm: `npm i startbootstrap-business-casual`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-business-casual.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-business-casual)
+- PHP
+- MySQL
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- jQuery
+
+## Depth-First Search (DFS) Approach
+
+The system uses DFS to explore possible diagnosis paths based on user-selected symptoms.
+
+The flow is as follows:
+
+1. The user selects or answers symptoms related to the motorcycle condition.
+2. The system checks the rules that match those symptoms.
+3. It traverses the diagnosis tree using DFS to explore possible causes deeply.
+4. When a matching fault is found, the system displays the identified problem and recommended solution.
+
+This algorithm helps the system evaluate cause-and-effect relationships in a logical sequence.
+
+## Project Structure
+
+```text
+Sispak_Cb/
+├── index.php
+├── diagnosis.php
+├── about.php
+├── kamus_istilah.php
+├── form_kritik_saran.php
+├── login.php
+├── connect.php
+├── adminpage.php
+├── dashboard.php
+├── data_gejala.php
+├── data_kerusakan.php
+├── data_solusi.php
+├── css/
+├── js/
+├── img/
+├── assets/
+├── vendor/
+├── README.md
+├── LICENSE
+└── other PHP application files
+```
+
+## Installation
+
+### Requirements
+
+Before running this project, ensure that the following are available:
+
+- PHP 7 or newer
+- MySQL or MariaDB
+- Apache or Nginx web server
+- Modern web browser
+
+### Steps
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Alr3y/Sispak_Cb.git
+```
+
+2. Open the project directory:
+
+```bash
+cd Sispak_Cb
+```
+
+3. Configure the database connection in `connect.php`.
+
+4. Import the required database structure if available in the project environment.
+
+5. Run the application using a local web server:
+
+```bash
+php -S localhost:8000
+```
+
+6. Open the project in your browser:
+
+```text
+http://localhost:8000
+```
 
 ## Usage
 
-### Basic Usage
+### For End Users
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+1. Open the homepage.
+2. Click the diagnosis menu.
+3. Enter a name or identifier.
+4. Answer the available symptom questions.
+5. The system will analyze the information and display the potential issue and recommended solution.
 
-### Advanced Usage
+### For Admin
 
-After installation, run `npm install` and then run `gulp dev` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+- Login to the admin page
+- Manage symptom data, damage data, and solution data
+- Update the rules and diagnosis knowledge base
 
-## Bugs and Issues
+## Example Diagnosis Flow
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-business-casual/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/business-casual/).
+```text
+Start
+  |
+  V
+User enters symptoms
+  |
+  V
+System checks matching rules
+  |
+  V
+DFS explores diagnosis paths
+  |
+  V
+Possible fault is identified
+  |
+  V
+Recommended solution is displayed
+  |
+  V
+End
+```
 
-## Custom Builds
+## Database Concept
 
-You can hire Start Bootstrap to create a custom build of any template, or create something from scratch using Bootstrap. For more information, visit the **[custom design services page](https://startbootstrap.com/bootstrap-design-services/)**.
+The application stores data related to:
 
-## About
+- Symptoms
+- Damages
+- Solutions
+- User information
+- Admin information
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+This allows the system to be updated and improved over time without changing the core logic drastically.
 
-* https://startbootstrap.com
-* https://twitter.com/SBootstrap
+## Project Goals
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+This project was created to support learning and application of:
 
-* http://davidmiller.io
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+- Expert systems
+- Decision tree reasoning
+- Depth-First Search algorithm
+- Automotive diagnostic logic
+- Web application development with PHP
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+## License
 
-## Copyright and License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/gh-pages/LICENSE) license.
+## Author
+
+- Aldi Renaldi
+- GitHub: [Alr3y](https://github.com/Alr3y)
+
+## Contribution
+
+Contributions are welcome. If you want to improve the project, please open an issue or submit a pull request.
+
+---
+
+This project demonstrates a simple expert system for diagnosing Honda CB 150R motorcycle issues using a rule-based approach and the Depth-First Search algorithm.

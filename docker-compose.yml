@@ -1,0 +1,33 @@
+services:
+  php:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=sispak_cb
+    depends_on:
+      - mysql
+    networks:
+      - sispak_network
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sispak_cb
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - "./sispak_cb (1).sql:/docker-entrypoint-initdb.d/01-init.sql:ro"
+    networks:
+      - sispak_network
+
+volumes:
+  mysql_data:
+
+networks:
+  sispak_network:
